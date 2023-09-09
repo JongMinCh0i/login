@@ -26,6 +26,7 @@ public class MemberRepository {
         return store.get(id);
     }
 
+    // 멤버를 찾지 못할 수도 있어서 Optional로 반환한다.
     public Optional<Member> findByLoginId(String loginId) {
         return findAll().stream()
                 .filter(member -> member.getLoginId().equals(loginId))
